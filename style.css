@@ -1,0 +1,33 @@
+html {
+	background: #373b44;
+	background: -webkit-linear-gradient(to right, #4286f4, #373b44);
+	background: linear-gradient(to right, #4286f4, #373b44);
+}
+
+body {
+	color: white;
+}
+
+.up {
+	margin-top: 25vh;
+	margin-bottom: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.down {
+	display: flex;
+	justify-content: space-between;
+
+	padding: 10px;
+}
+
+.temperature {
+	font-size: 64px;
+}
+
+span {
+	font-size: 32px;
+}
