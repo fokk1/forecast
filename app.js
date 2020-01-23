@@ -9,31 +9,37 @@ const fetchData = async (lat, lon) => {
 	});
 
 	const { data } = response.data;
-	const [ { datetime, temp, city_name, wind_spd, wind_cdir_full, pres, rh, weather } ] = data;
-	const { description } = weather;
+	const [
+		{ ob_time, temp, city_name, app_temp, wind_spd, wind_cdir_full, pres, rh, sunrise, sunset, weather }
+	] = data;
+	const { icon, description } = weather;
 
 	document.body.innerHTML = `
 	<div class="forecast">
 		<div class="container">
-
-			<div class="up">
-				<div class="time">${city_name}, ${datetime}</div>
-				<div class="temperature">${Math.round(temp)}<span>&#8451<span></div>
-				<div class="type">${description}</div>
-			</div>
-
-			<div class="down">
-				<div class="wind">
-					<h1>Wind</h1>
-					<div><span>${Math.round(wind_spd)}</span> m/h ${wind_cdir_full}</div>
+			<div class="cards">
+				<div class="card">
+					<div class="header">
+						<div>Current Weather</div>
+						<div><span>&#8451;</span></div>
+					</div>
+					<div class="time">${city_name}, ${ob_time}</div>
+					<div class="weather">
+						<div class="temperatures">
+							<div class="curr__temp">${Math.floor(temp)}<span>&#176;</span></div>
+							<div class="type">${description}</div>
+							<div class="real-feel">Feels like: ${Math.floor(app_temp)}<span>&#176;</span></div>
+						</div>
+						<img class="weather-icon" src="img/icons/${icon}.png" alt="">
+					</div>
 				</div>
-				<div class="pressure">
-					<h1>Pressure</h1>
-					<div><span>${Math.round(pres)}</span> mbar</div>
-				</div>
-				<div class="humidity">
-					<h1>Humidity</h1>
-					<div><span>${rh}</span> %</div>
+
+				<div class="card">
+					<p>Wind: ${wind_cdir_full} at ${Math.floor(wind_spd)} km/h</p>
+					<p>Pressure: ${Math.floor(pres)} mbar</p>
+					<p>Humidity: ${rh}%</p>
+					<p>Sunrise: ${sunrise}</p>
+					<p>Sunset: ${sunset}</p>
 				</div>
 			</div>
 		</div>

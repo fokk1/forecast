@@ -1,33 +1,86 @@
 html {
 	background: #373b44;
-	background: -webkit-linear-gradient(to right, #4286f4, #373b44);
-	background: linear-gradient(to right, #4286f4, #373b44);
+}
+
+@media (max-width: 600px) {
+	html {
+		background-color: white;
+	}
 }
 
 body {
 	color: white;
 }
 
-.up {
-	margin-top: 25vh;
-	margin-bottom: 30px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+h1 {
+	font-size: 2rem;
+	text-align: center;
 }
 
-.down {
+.alert {
 	display: flex;
-	justify-content: space-between;
+	margin-top: 25vh;
+}
+
+@media (max-width: 600px) {
+	.alert {
+		margin-top: 0;
+	}
+}
+
+.alert.hidden {
+	display: none;
+}
+
+.forecast {
+	margin-top: 25vh;
+}
+
+@media (max-width: 600px) {
+	.forecast {
+		margin-top: 0;
+	}
+}
+
+.cards {
+	display: flex;
+	justify-content: center;
+}
+
+@media (max-width: 600px) {
+	.cards {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.card {
+	width: 300px;
+	height: 300px;
 
 	padding: 10px;
+
+	background-color: white;
 }
 
-.temperature {
-	font-size: 64px;
+.header {
+	display: flex;
+	justify-content: space-between;
 }
 
-span {
-	font-size: 32px;
+.time {
+	opacity: .8;
+}
+
+.weather {
+	display: flex;
+}
+
+.curr__temp {
+	font-size: 5rem;
+}
+
+.weather-icon {
+	width: 120px;
+	height: 120px;
 }
