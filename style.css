@@ -8,28 +8,9 @@ html {
 	}
 }
 
-body {
-	color: white;
-}
-
 h1 {
 	font-size: 2rem;
 	text-align: center;
-}
-
-.alert {
-	display: flex;
-	margin-top: 25vh;
-}
-
-@media (max-width: 600px) {
-	.alert {
-		margin-top: 0;
-	}
-}
-
-.alert.hidden {
-	display: none;
 }
 
 .forecast {
@@ -83,4 +64,22 @@ h1 {
 .weather-icon {
 	width: 120px;
 	height: 120px;
+}
+
+.input {
+	width: 15%;
+}
+
+@media (max-width: 600px) {
+	.input {
+		width: 80%;
+	}
+}
+
+.modal {
+	color: white;
+}
+
+.modal-background {
+	background-color: rgba(0, 0, 0, 0.65);
 }
